@@ -1,0 +1,27 @@
+.csv
+.github/**
+.gitignore
+.vscode
+.vscode-test/**
+.vscode/**
+.xls
+.xlsx
+**/*.map
+devreplay.json
+html/**/*.ts
+out/test/**
+src/
+src/**
+test/**
+**/tsconfig.json
+vsc-extension-quickstart.md
+webpack.config.js
+.markdownlint.json
+.eslintignore
+
+# node_modules #withWebpack
+# out/ #withWebpack
+
+# withoutWebpack:
+dist
+# /withoutWebpac
