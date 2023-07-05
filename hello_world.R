@@ -1,3 +1,3 @@
-// Writing a simple code
+#Writing a simple code
 
 'hello world'
