@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+            "dbaeumer.vscode-eslint",
+            "GrapeCity.gc-excelviewer",
+            "ikuyadeu.devreplay",
+    "DavidAnson.vscode-markdownlint"
+]
+}

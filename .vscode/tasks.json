@@ -1,0 +1,86 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Package Extension",
+        "type": "shell",
+        "problemMatcher": [],
+        "command": "vsce",
+        "args": [
+          "package",
+          "--yarn",
+          "-o",
+          "${workspaceFolderBasename}.vsix"
+        ]
+      },
+      {
+        "label": "Install Extension",
+        "type": "shell",
+        "problemMatcher": [],
+        "command": "code",
+        "args": [
+          "--install-extension",
+          "${workspaceFolderBasename}.vsix",
+          "--force"
+        ],
+        "dependsOn": ["Package Extension"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+      {
+        "type": "npm",
+        "script": "compile",
+        "problemMatcher": "$tsc"
+      },
+      {
+        "type": "npm",
+        "script": "watch",
+        "problemMatcher": "$tsc-watch",
+        "isBackground": true,
+        "presentation": {
+          "reveal": "never"
+        },
+        "group": "build"
+      },
+      {
+        "type": "npm",
+        "script": "watchHelp",
+        "group": "build",
+        "problemMatcher": "$tsc-watch",
+        "isBackground": true
+      },
+      {
+        "type": "npm",
+        "script": "watchHttpgd",
+        "group": "build",
+        "problemMatcher": "$tsc-watch",
+        "isBackground": true
+      },
+      {
+        "label": "watchAll",
+        "dependsOn": [
+          "npm: watch",
+          "npm: watchHelp",
+          "npm: watchHttpgd"
+        ],
+        "problemMatcher": []
+      },
+      {
+        "type": "npm",
+        "script": "pretest",
+        "problemMatcher": "$tsc-watch",
+        "isBackground": true,
+        "presentation": {
+          "reveal": "never"
+        },
+        "group": {
+          "kind": "test",
+          "isDefault": true
+        },
+      }
+    ]
+  }
