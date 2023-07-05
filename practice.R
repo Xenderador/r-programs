@@ -1,22 +1,22 @@
-// Addition
+# Addition
 
 library(add)
 
  7+7
 
-// Subtraction
+# Subtraction
 
 library(sub)
 
  8-7
 
-// Multiplication
+# Multiplication
 
 library(mul)
 
  8*8
 
-// Division
+# Division
 
 library(div)
 
